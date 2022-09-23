@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import React from "react";
 
 function MovieRating({rating}) {
@@ -40,6 +41,7 @@ export default class Movie extends React.Component {
                     <img src={this.props.movie.poster} alt="" className="card-img-top" />
                     <div className="card-body">
                         <h5 className="card-title">{this.props.movie.title}</h5>
+                        <p><small>{ format(this.props.movie.releaseDate, 'MM/dd/yyyy')  }</small></p>
                         <p className="card-text">{this.props.movie.plot}</p>
                     </div>
                     <MovieAttribute {...this.props}/>
