@@ -10,7 +10,7 @@ export default function Top10Movies(props) {
     const search = (e) => {
         let term = e.target.value.toLowerCase()
         
-        setMovies(props.movies.filter( m => m.title.toLowerCase().indexOf(term) && m.plot.toLowerCase().indexOf(term) !== -1))
+        setMovies(props.movies.filter( m => m.title && m.plot.toLowerCase().indexOf(term) !== -1))
     }
 
     const sortByRating = (e) => {
